@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islami_online_c4/home/HomeScreen.dart';
+import 'package:islami_online_c4/home/hadeth/HadethDetailsScrean.dart';
 
 void main() {
   runApp(MainApplication());
@@ -13,6 +14,7 @@ class MyThemeData {
       appBarTheme: AppBarTheme(
         backgroundColor: Colors.transparent,
         elevation: 0,
+        centerTitle: true,
         titleTextStyle: TextStyle(color: Colors.black, fontSize: 30),
       ),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
@@ -23,6 +25,7 @@ class MyThemeData {
       appBarTheme: AppBarTheme(
           backgroundColor: Colors.transparent,
           elevation: 0,
+          centerTitle: true,
           titleTextStyle: TextStyle(color: Colors.black, fontSize: 30)));
 }
 
@@ -34,7 +37,10 @@ class MainApplication extends StatelessWidget {
       title: 'Islami',
       theme: MyThemeData.lightTheme,
       darkTheme: MyThemeData.darkTheme,
-      routes: {HomeScreen.routeName: (buildContext) => HomeScreen()},
+      routes: {
+        HomeScreen.routeName: (buildContext) => HomeScreen(),
+        HadethDetailsScrean.routeName : (buildContext) => HadethDetailsScrean(),
+      },
       initialRoute: HomeScreen.routeName,
     );
   }
