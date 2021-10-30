@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islami_online_c4/home/HomeScreen.dart';
+import 'package:islami_online_c4/home/quran/SuraDetailsScrean.dart';
 
 void main() {
   runApp(MainApplication());
@@ -13,17 +14,29 @@ class MyThemeData {
       appBarTheme: AppBarTheme(
         backgroundColor: Colors.transparent,
         elevation: 0,
+        centerTitle: true,
+        iconTheme: IconThemeData(
+          color: Colors.black
+        ),
         titleTextStyle: TextStyle(color: Colors.black, fontSize: 30),
       ),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
           selectedItemColor: Colors.black, unselectedItemColor: Colors.white));
   static final ThemeData darkTheme = ThemeData(
       scaffoldBackgroundColor: Colors.transparent,
-      primaryColor: MyThemeData.primaryColor,
+      primaryColor: Color.fromARGB(255, 20, 26, 46),
       appBarTheme: AppBarTheme(
           backgroundColor: Colors.transparent,
           elevation: 0,
-          titleTextStyle: TextStyle(color: Colors.black, fontSize: 30)));
+          centerTitle: true,
+          iconTheme: IconThemeData(
+              color: Colors.black
+          ),
+          titleTextStyle: TextStyle(color: Colors.black, fontSize: 30)
+      ),
+      bottomNavigationBarTheme: BottomNavigationBarThemeData(
+          selectedItemColor: Color.fromARGB(255, 250, 204, 29), unselectedItemColor: Colors.white));
+
 }
 
 class MainApplication extends StatelessWidget {
@@ -34,7 +47,11 @@ class MainApplication extends StatelessWidget {
       title: 'Islami',
       theme: MyThemeData.lightTheme,
       darkTheme: MyThemeData.darkTheme,
-      routes: {HomeScreen.routeName: (buildContext) => HomeScreen()},
+      routes: {
+        HomeScreen.routeName: (buildContext) => HomeScreen(),
+        SuraDetailsScrean.routeName : (buildContext) => SuraDetailsScrean(),
+
+      },
       initialRoute: HomeScreen.routeName,
     );
   }
