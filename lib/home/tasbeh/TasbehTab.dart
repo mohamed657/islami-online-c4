@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islami_online_c4/main.dart';
 
 class TasbehTab extends StatefulWidget {
   @override
@@ -70,7 +71,7 @@ class _TasbehTabState extends State<TasbehTab> {
             width: 160,
             // height: 50,
             decoration:  BoxDecoration(
-                color: Color(0xFFB7935F),
+                color: MyThemeData.primaryColor,
 
                 borderRadius: BorderRadius.circular(20)
             ),
@@ -88,10 +89,10 @@ class _TasbehTabState extends State<TasbehTab> {
   }
 
   void onPressed_tasbeh(){
-    if(Number_Tasbeh<=31){
+    if(Number_Tasbeh<=33){
       Number_Tasbeh++;
     }
-    if(Number_Tasbeh==31&&index<=3){
+    if(Number_Tasbeh==33&&index<=3){
       Number_Tasbeh=0;
       index++;
     }if(index==3){
